@@ -35,36 +35,13 @@ This project is a full-featured web application built using the MERN stack (Mong
 - **Responsive Design:**
     - Fully responsive for all device sizes
 
-## Project Structure
-
-```
-/project-root
-├── /client    # React frontend
-│  ├── /src
-│  │  ├── /components
-│  │  ├── /Redux
-│  │  ├── /Service
-│  │  ├── /Operations
-│  │  ├── App.js
-│  │  └── index.js
-│  └── package.json
-├── /server    # Express backend
-│  ├── /controllers
-│  ├── /models
-│  ├── /routes
-│  ├── .env        # Environment variables
-│  └── server.js    
-├── package.json  # Project metadata
-└── README.md    # This file
-```
-
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js (download from [Node.js website](https://nodejs.org/))
 - MongoDB (set up local or cloud instance)
-
+```
 ### Installation
 
 1. **Clone the repository:**
