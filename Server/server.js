@@ -7,7 +7,7 @@ require("dotenv").config();
 
 // Import configurations and routes
 const connect = require("./config/database");
-const cloudinaryConnect = require("./config/cloudinary");
+
 const userRoutes = require("./routes/userRoutes");
 
 // Initialize Express app
@@ -32,7 +32,6 @@ app.use(
 
 // Connect to database and Cloudinary
 connect();
-cloudinaryConnect();
 
 // Define routes
 app.use("/api", userRoutes);

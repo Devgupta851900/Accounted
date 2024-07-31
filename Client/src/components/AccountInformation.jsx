@@ -48,7 +48,7 @@ const AccountInformation = () => {
 	return (
 		<div
 			className={`relative 
-		${showModal ? " h-screen overflow-hidden " : " h-full "}`}
+		${showModal ? " h-screen md:overflow-hidden " : " h-full "}`}
 		>
 			<div
 				className={`flex flex-col justify-center items-center mt-4 mb-16 p-4 transition-all duration-200
@@ -56,23 +56,23 @@ const AccountInformation = () => {
 			`}
 			>
 				<div className="w-full text-white flex flex-col justify-center items-start gap-y-4  ">
-					<div className="flex w-full justify-between px-24 ">
-						<div className=" rounded-full border aspect-square border-slate-700 flex justify-start items-start p-4 ">
+					<div className="flex w-full justify-between items-center md:px-24 ">
+						<div className=" rounded-full border aspect-square border-slate-700 flex justify-start items-start lg:p-4 md:p-4 p-1 ">
 							<img
 								alt="profile"
 								src={user.image}
 								width={240}
-								className=" rounded-full "
+								className=" rounded-full"
 							/>
 						</div>
-						<div className=" mt-4 w-[50%] flex justify-center items-center gap-x-2">
+						<div className=" mt-4 lg:w-1/2 md:w-1/2 w-full flex justify-center items-center gap-x-2">
 							<button
 								onClick={() => {
 									setShowModal((prev) =>
 										prev ? false : true
 									);
 								}}
-								className="mt-2 w-[40%] rounded-[8px] bg- bg-yellow-400 py-[8px] px-[12px] font-medium text-slate-950"
+								className="mt-2 lg:w-[40%] w-4/5 ml-2 rounded-[8px] bg- bg-yellow-400 py-[8px] px-[12px] font-medium text-slate-950"
 							>
 								Edit
 							</button>
@@ -80,7 +80,7 @@ const AccountInformation = () => {
 								onClick={() => {
 									dispatch(logout(navigate));
 								}}
-								className="mt-2 w-[40%] rounded-[8px] bg- bg-yellow-400 py-[8px] px-[12px] font-medium text-slate-950"
+								className="mt-2 lg:w-[40%] w-4/5 ml-2 rounded-[8px] bg- bg-yellow-400 py-[8px] px-[12px] font-medium text-slate-950"
 							>
 								Logout
 							</button>
@@ -155,7 +155,7 @@ const AccountInformation = () => {
 				{showModal &&
 					(loading ? (
 						<div
-							className="w-[90%] h-screen mx-auto my-8 z-5 p-24  bg-slate-900 flex flex-col justify-center
+							className="w-[90%]  mx-auto my-8 z-5 p-24  bg-slate-900 flex flex-col justify-center
 						 items-center  rounded-3xl absolute top-0 left-0 bottom-0 right-0"
 						>
 							<Spinner />
@@ -165,6 +165,13 @@ const AccountInformation = () => {
 							onSubmit={handleSubmit(SubmitHandler)}
 							className=" w-[90%] h-fit mx-auto z-5 p-10 bg-slate-900  rounded-3xl absolute top-0 left-0 bottom-0 right-0  "
 						>
+							<div className="text-slate-50 text-center mb-2">
+								You can edit one or more detail(s).
+								<div className=" text-pink-800 ">
+									[Please Enter Your password to confirm]
+								</div>
+							</div>
+
 							<div className=" flex flex-col gap-y-4">
 								<div className="flex gap-x-4">
 									{/* Name */}
@@ -326,7 +333,7 @@ const AccountInformation = () => {
 
 								{/* Password */}
 
-								<div className="flex gap-2">
+								<div className="flex flex-col md:flex-row gap-2">
 									{/* Old Password */}
 									<div className="w-full h-[72px] flex flex-col  ">
 										<label className="relative">
